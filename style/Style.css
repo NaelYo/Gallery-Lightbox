@@ -132,7 +132,28 @@ h2 {
 }
 
 .overlay:target .close {
-    animation: closeZoom 0.5s 2s forwards;
+    animation: closeZoom 0.5s 1s forwards;
+}
+
+.overlay:target .next,
+.overlay:target .prev {
+    animation: fadeNextPrev 0.5s 1s forwards;
+}
+
+.next, .prev {
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/Ikon/next.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 43%;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../img/Ikon/next.png);
+    transform: rotate(180deg);
+    margin-left: -100px;
 }
 
 @keyframes zoom {
@@ -159,5 +180,15 @@ h2 {
         opacity: 1;
         transform: scale(1);
         transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeNextPrev {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
